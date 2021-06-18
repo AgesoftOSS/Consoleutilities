@@ -24,7 +24,7 @@ first you need to know that `as` is the standart namespace you can accses all fu
 
 `as::math` contains the `mathe` class that contains math functions *unfinished*
 
-`as::message` contains the `msg` class that contains `Print()`
+`as::message`  contains the `Print()` function
 
 `as::consoletext` contains the `ChangeColorText()` functions
 
