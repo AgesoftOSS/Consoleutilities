@@ -24,7 +24,6 @@ const int BUILD_NUMBER = 4;
 
 #pragma region Macros
 // Console Interaction MacroS
-#define EXIT return 0; // Exits The Application
 #define ConsoleTitle(d) SetConsoleTitle(d) // Change the Console Title. you need still to do (L"title here")
 
 // Color Macros
@@ -104,20 +103,12 @@ namespace as {
 
 	// The Message Namespace Contains Message Functions
 	namespace message {
-
-		// msg is a message class that contains all Message Functions
-		class msg {
-
-		private:
-			// nothing
-		public:
-			// Message Function works the same like cout
+		
 			template<typename T>
 			void Print(T text)
 			{
 				cout << text << endl;
 			}
-		};
 	}
 
 	// all functions that changes the text in any form is in this namespace
