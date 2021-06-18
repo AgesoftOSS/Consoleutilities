@@ -1,10 +1,10 @@
 /*--------------------------------------------------------------------*
 |                                                                     |
-|																      |
-|         (c) Agesoft 2020-2021 All rights reserved					  |
-|	consoleutilities.h -- A Library For Easier C++ Developent         |
-|	                                                                  |
-|	                                                                  |
+|								      |
+|         (c) Agesoft 2020-2021 All rights reserved	              |
+|	consoleutilities.h -- A Library For Easier C++ Developent     |
+|	                                                              |
+|	                                                              |
 *--------------------------------------------------------------------*/
 
 // Consoleutilities Version 0.1.1 BETA
