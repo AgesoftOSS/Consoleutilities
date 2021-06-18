@@ -76,13 +76,11 @@ namespace as {
 	// The Math Namespace Contains The Math Class
 	namespace math {
 
+		// Shorted PI Number
 		const double PI = 3.14;
 
 		// Math is a class that contains all Math Functions
 		class mathe {
-
-		private:
-
 		public:
 
 			// <base num>^<potenz>
