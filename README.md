@@ -44,5 +44,3 @@ as::message::msg e;
 > We dont recomend you to use `using namespace as;` or any Consoleutilities namespace
 > 
 > This is intentended to orginize Consoleutilities functions and namespaces
-
-**[Support](https://discord.gg/S7HcsCJHGQ)**
