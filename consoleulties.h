@@ -26,18 +26,6 @@ const int BUILD_NUMBER = 4;
 // Console Interaction MacroS
 #define ConsoleTitle(d) SetConsoleTitle(d) // Change the Console Title. you need still to do (L"title here")
 
-// Color Macros
-#define DEFAULT_COLOR 7
-#define FOREGROUND_VIOLETTE 5
-#define FOREGROUND_YELLOW 6
-#define FOREGROUND_BRIGHTYELLOW 14
-#define FOREGROUND_GRAY 8
-#define FOREGROUND_CYAN 11
-#define BACK_WHITE_FORE_BLACK 112
-#define BACK_BLUE_FORE_WHITE 23
-#define BACK_BLUE_FORE_GREEN 26
-#define BACK_BLUE_FORE_RED 28
-#define BACK_YELLOW_FORE_WHITE 110
 #pragma endregion
 
 using namespace std;
@@ -45,6 +33,17 @@ using namespace std;
 HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE); // The Handle That Consoleutilities Uses for STD_OUTPUT_HANDLE
 
 #pragma region consoleutilities
+
+enum Color {
+	WHITE = 0x07,
+	RED = 0x0004,
+	BLUE = 0x0001,
+	GREEN = 0x0002,
+	VIOLETTE = 0x05,
+	YELLOW = 0x06,
+	BRIGHTYELLOW = 0x000E,
+	CYAN = 0x000B,
+};
 
 // the console ulties namespace
 namespace as {
@@ -86,8 +85,7 @@ namespace as {
 			// <base num>^<potenz>
 			void ExpotentMath()
 			{
-				int basis;
-				int potenz;
+				int basis, potenz;
 				cout << "whats the basis: ";
 				cin >> basis;
 				cout << endl << "whats the potenz: ";
@@ -112,17 +110,7 @@ namespace as {
 	// all functions that changes the text in any form is in this namespace
 	namespace consoletext {
 		// Changes The Console Color, insert a ColorID (0-7)
-		void ChangeColorText(int colorID)
-		{
-			if (colorID == 0) { SetConsoleTextAttribute(h, DEFAULT_COLOR); }
-			if (colorID == 1) { SetConsoleTextAttribute(h, FOREGROUND_RED | FOREGROUND_INTENSITY); }
-			if (colorID == 2) { SetConsoleTextAttribute(h, FOREGROUND_BLUE | FOREGROUND_INTENSITY); }
-			if (colorID == 3) { SetConsoleTextAttribute(h, FOREGROUND_GREEN | FOREGROUND_INTENSITY); }
-			if (colorID == 4) { SetConsoleTextAttribute(h, FOREGROUND_VIOLETTE); }
-			if (colorID == 5) { SetConsoleTextAttribute(h, FOREGROUND_YELLOW); }
-			if (colorID == 6) { SetConsoleTextAttribute(h, FOREGROUND_BRIGHTYELLOW); }
-			if (colorID == 7) { SetConsoleTextAttribute(h, FOREGROUND_CYAN); }
-		}
+		void ChangeColorText(Color colorID) {SetConsoleTextAttribute(h, colorID); }
 	}
 
 	// all functions that simplefy your c++ development is in this namespace
@@ -135,15 +123,14 @@ namespace as {
 	// prints consoleutilities infos
 	void consoleultiesversion()
 	{
-		as::consoletext::ChangeColorText(6);
+		as::consoletext::ChangeColorText(Color::BRIGHTYELLOW);
 		cout << "[Consoleutilities] By Agesoft" << endl;
-		as::consoletext::ChangeColorText(3);
+		as::consoletext::ChangeColorText(Color::BLUE);
 		cout << "Version: BETA " << VERSION << endl;
 		cout << "Build Number: " << BUILD_NUMBER << endl;
-		as::consoletext::ChangeColorText(7);
+		as::consoletext::ChangeColorText(Color::CYAN);
 		cout << "\nCopyright Agesoft" << endl;
-		as::consoletext::ChangeColorText(0);
-
+		as::consoletext::ChangeColorText(Color::WHITE);
 	}
 
 }
