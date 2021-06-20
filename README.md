@@ -33,6 +33,7 @@ first you need to know that `as` is the standart namespace you can accses all fu
 **example:**
 ```cpp
 int main() {
+  as::consoletext::ChangeColorText(Color::CYAN);
   as::message::Print("e");
   as::consoleinteraction::Wait()
   as::Application ea;
