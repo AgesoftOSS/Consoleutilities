@@ -36,8 +36,7 @@ int main() {
   as::consoletext::ChangeColorText(Color::CYAN);
   as::message::Print("e");
   as::consoleinteraction::Wait()
-  as::Application ea;
-  ea.Exit();
+  as::Application::Exit();
 }
 ```
 
