@@ -14,6 +14,7 @@ const int BUILD_NUMBER = 7;
 
 #pragma once
 #include <iostream>
+#include <math.h>
 #include <Windows.h>
 #include <string>
 #include <math.h>
