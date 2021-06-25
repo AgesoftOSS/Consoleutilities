@@ -4,7 +4,7 @@
 **Features:**
 - Changing Console Lines Color
 - Console Interaction *(window size, color changing)*
-- Premade Functions
+- **Premade Functions** *(math functions & more)*
 - Oriented Namespaces
 - Macros
 
@@ -20,9 +20,9 @@ to install and inclue to your project you need to include this in your project e
 first you need to know that `as` is the standart namespace you can accses all functions by using `as` and its other namespaces
 
 **All namespaces**
-`as::consoleinteraction` contains the console window interacton class , `Wait()` and `Clear()`
+`as::consoleinteraction` contains the `ConsoleWindow` class that contains window size functions , `Wait()` and `Clear()`
 
-`as::math` contains the `mathe` class that contains math functions *unfinished*
+`as::math` contains some Math Functions like `RootSquare()`
 
 `as::message`  contains the `Print()` function
 
