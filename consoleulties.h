@@ -7,10 +7,10 @@
 |	                                                              |
 *--------------------------------------------------------------------*/
 
-// Consoleutilities Version 0.1.1 BETA
+// Consoleutilities Version 0.1.2 STABLE BUILD
 
-const double VERSION = 1.1;
-const int BUILD_NUMBER = 4;
+const double VERSION = 1.2;
+const int BUILD_NUMBER = 7;
 
 #pragma once
 #include <iostream>
@@ -79,22 +79,9 @@ namespace as {
 		const double PI = 3.14;
 
 		//Gets the decimal number of the procent value
-		double GetProcentNumber(double value)
-		{
-			return value / 100;
-		}
-
-		double ExpotentMath(double basis, double potenz)
-		{
-			double r = pow(basis, potenz);
-			return r;
-		}
-		
-		double Rootsquare(double value)
-		{
-			double r = sqrt(value);
-			return r;
-		}
+		double GetProcentNumber(double value) { return value / 100; }
+		double ExpotentMath(double basis, double potenz){ double r = pow(basis, potenz); return r;}
+		double Rootsquare(double value){ double r = sqrt(value); return r; }
 	}
 
 	// The Message Namespace Contains Message Functions
