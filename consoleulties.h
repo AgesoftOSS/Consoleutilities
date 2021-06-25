@@ -78,23 +78,23 @@ namespace as {
 		// Shorted PI Number
 		const double PI = 3.14;
 
-		// Math is a class that contains all Math Functions
-		class mathe {
-		public:
+		//Gets the decimal number of the procent value
+		double GetProcentNumber(double value)
+		{
+			return value / 100;
+		}
 
-			// <base num>^<potenz>
-			void ExpotentMath()
-			{
-				int basis, potenz;
-				cout << "whats the basis: ";
-				cin >> basis;
-				cout << endl << "whats the potenz: ";
-				cin >> potenz;
-				cout << "Result: " << pow(basis, potenz) << endl;
-			}
-
-		};
-
+		double ExpotentMath(double basis, double potenz)
+		{
+			double r = pow(basis, potenz);
+			return r;
+		}
+		
+		double Rootsquare(double value)
+		{
+			double r = sqrt(value);
+			return r;
+		}
 	}
 
 	// The Message Namespace Contains Message Functions
