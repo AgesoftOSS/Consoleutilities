@@ -35,6 +35,7 @@ HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE); // The Handle That Consoleutilities 
 
 #pragma region consoleutilities
 
+// SetConsoleTextAttribute() Colors.
 enum Color {
 	WHITE = 0x07,
 	RED = 0x0004,
@@ -52,8 +53,7 @@ namespace as {
 	
 	class Application {
 	public:
-
-		void Exit() { exit(0); }
+		static void Exit() { exit(0); }
 	};
 
 	// all functions that interacts with the console is in this namespace
@@ -61,11 +61,11 @@ namespace as {
 
 		class ConsoleWindow {
 		public:
-			void HideConsole() { ShowWindow(GetConsoleWindow(), SW_HIDE); };
-			void ShowConsole() { ShowWindow(GetConsoleWindow(), SW_SHOW); };
-			void MinimizeConsole() { ShowWindow(GetConsoleWindow(), SW_MINIMIZE); };
-			void MaximizeConsole() { ShowWindow(GetConsoleWindow(), SW_MAXIMIZE); };
-			void RestoreNormalConsoleSize() { ShowWindow(GetConsoleWindow(), SW_NORMAL); };
+			static void HideConsole() { ShowWindow(GetConsoleWindow(), SW_HIDE); };
+			static void ShowConsole() { ShowWindow(GetConsoleWindow(), SW_SHOW); };
+			static void MinimizeConsole() { ShowWindow(GetConsoleWindow(), SW_MINIMIZE); };
+			static void MaximizeConsole() { ShowWindow(GetConsoleWindow(), SW_MAXIMIZE); };
+			static void RestoreNormalConsoleSize() { ShowWindow(GetConsoleWindow(), SW_NORMAL); };
 		};
 
 		//puts the console to wait for any button pressed
@@ -81,8 +81,8 @@ namespace as {
 
 		//Gets the decimal number of the procent value
 		double GetProcentNumber(double value) { return value / 100; }
-		double ExpotentMath(double basis, double potenz){ double r = pow(basis, potenz); return r;}
-		double Rootsquare(double value){ double r = sqrt(value); return r; }
+		double ExpotentMath(double basis, double potenz) { return pow(basis, potenz); }
+		double Rootsquare(double value) { return sqrt(value); }
 	}
 
 	// The Message Namespace Contains Message Functions
