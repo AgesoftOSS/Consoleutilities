@@ -23,12 +23,6 @@ const int BUILD_NUMBER = 7;
 #include <cstdlib>
 #include <stdlib.h>
 
-#pragma region Macros
-// Console Interaction MacroS
-#define ConsoleTitle(d) SetConsoleTitle(d) // Change the Console Title. you need still to do (L"title here")
-
-#pragma endregion
-
 using namespace std;
 
 HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE); // The Handle That Consoleutilities Uses for STD_OUTPUT_HANDLE
@@ -99,7 +93,7 @@ namespace as {
 
 	// all functions that changes the text in any form is in this namespace
 	namespace consoletext {
-		// Changes The Console Color, insert a ColorID (0-7)
+		// Changes The Console Color, insert a color by using the Color Enum.
 		void ChangeColorText(Color colorID) {SetConsoleTextAttribute(h, colorID); }
 	}
 
