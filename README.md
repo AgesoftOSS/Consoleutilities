@@ -4,9 +4,8 @@
 **Features:**
 - Changing Console Lines Color
 - Console Interaction *(window size, color changing)*
-- **Premade Functions** *(math functions & more)*
+- Simplefied Math Functions
 - Oriented Namespaces
-- Macros
 
 **Note**
 Consoleutilities is still unfinished
