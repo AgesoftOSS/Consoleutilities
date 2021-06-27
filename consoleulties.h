@@ -83,6 +83,8 @@ namespace as {
 		double GetProcentNumber(double value) { return value / 100; }
 		double ExpotentMath(double basis, double potenz) { return pow(basis, potenz); }
 		double Rootsquare(double value) { return sqrt(value); }
+		double GetCircleArea(double r) { return PI * pow(r, 2); }
+		double GetCircleScope(double r) { return 2 * PI * r; }
 	}
 
 	// The Message Namespace Contains Message Functions
