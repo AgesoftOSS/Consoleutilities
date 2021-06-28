@@ -42,3 +42,6 @@ int main() {
 > We dont recomend you to use `using namespace as;` or any Consoleutilities namespace
 > 
 > This is intentended to orginize Consoleutilities functions and namespaces
+
+# Controbuting
+currently this repo dosnt support controbution i want to learn c++ by developing it
