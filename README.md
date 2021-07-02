@@ -1,5 +1,5 @@
 # Consoleutilities
-**Consoleutilities** is a **C++** Library for Windows which makes your c++ development alot easier and faster 
+**Consoleutilities** is a **C++** Library for Windows which makes your c++ development alot easier and faster
 
 **Features:**
 - Changing Console Lines Color
