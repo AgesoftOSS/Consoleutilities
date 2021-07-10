@@ -12,11 +12,6 @@
 - Simplefied Math Functions
 - Oriented Namespaces
 
-**Note**
-Consoleutilities is still unfinished
-
-*this is the only stable build of Consoleutilities i currently own*
-
 # Getting Started with Consoleutilities
 to install and inclue to your project you need to include this in your project explorer then add this code: 
 ```cpp
@@ -47,9 +42,5 @@ int main() {
 }
 ```
 
-> We dont recomend you to use `using namespace as;` or any Consoleutilities namespace
-> 
-> This is intentended to orginize Consoleutilities functions and namespaces
-
 # Controbuting
-currently this repo dosnt support controbution i want to learn c++ by developing it
+currently you cant controbute on this repo
