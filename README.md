@@ -13,7 +13,7 @@
 - Oriented Namespaces
 
 # Getting Started with Consoleutilities
-to install and inclue to your project you need to include this in your project explorer then add this code: 
+to install and include to your project you need to include this in your project explorer then add this code: 
 ```cpp
 #include "consoleulties.h"
 ```
@@ -42,5 +42,5 @@ int main() {
 }
 ```
 
-# Controbuting
-currently you cant controbute on this repo
+# Contributing
+currently you cant contribute on this repo
