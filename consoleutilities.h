@@ -41,7 +41,7 @@ enum Color {
 	CYAN = 0x000B,
 };
 
-// the console ulties namespace
+// the consoleutilities namespace
 namespace as {
 
 	
