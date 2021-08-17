@@ -42,5 +42,5 @@ int main() {
 }
 ```
 
-# Contributing
-currently you cant contribute on this repo
+# Contributing 
+You cant currently contribute in this repo but if you find any bugs / typo please create a **issue** and I look forward for it
