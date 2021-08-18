@@ -7,21 +7,26 @@
 **Consoleutilities** is a **C++** Library for Windows which makes your c++ development alot easier and faster 
 
 **Features:**
+
 - Changing Console Lines Color
 - Console Interaction *(window size, color changing)*
 - Simplefied Math Functions
 - Oriented Namespaces
 
 # Getting Started with Consoleutilities
-to install and include to your project you need to include this in your project explorer then add this code: 
+Download the Header file and include to your project! 
+
+to use it you need to include `consoleutilities.h` in your project explorer then add this code: 
 ```cpp
 #include "consoleulties.h"
 ```
 
 **to use Consoleutilities**
+
 first you need to know that `as` is the standart namespace you can accses all functions by using `as` and its other namespaces
 
 **All namespaces**
+
 `as::consoleinteraction` contains the `ConsoleWindow` class that contains window size functions , `Wait()` and `Clear()`
 
 `as::math` contains some Math Functions like `RootSquare()`
