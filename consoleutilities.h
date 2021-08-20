@@ -45,16 +45,14 @@ enum Color {
 namespace as {
 
 	
-	class Application {
-	public:
+	struct Application {
 		static void Exit() { exit(0); }
 	};
 
 	// all functions that interacts with the console is in this namespace
 	namespace consoleinteraction {
 
-		class ConsoleWindow {
-		public:
+		struct ConsoleWindow {
 			static void HideConsole() { ShowWindow(GetConsoleWindow(), SW_HIDE); };
 			static void ShowConsole() { ShowWindow(GetConsoleWindow(), SW_SHOW); };
 			static void MinimizeConsole() { ShowWindow(GetConsoleWindow(), SW_MINIMIZE); };
