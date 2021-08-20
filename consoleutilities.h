@@ -10,7 +10,7 @@
 // Consoleutilities Version 0.1.2 STABLE BUILD
 
 const double VERSION = 1.2;
-const int BUILD_NUMBER = 7;
+const int BUILD_NUMBER = 8;
 
 #pragma once
 #include <iostream>
@@ -83,10 +83,7 @@ namespace as {
 	namespace message {
 		
 			template<typename T>
-			void Print(T text)
-			{
-				cout << text << endl;
-			}
+			void Print(T text) { cout << text << endl; }
 	}
 
 	// all functions that changes the text in any form is in this namespace
