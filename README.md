@@ -8,7 +8,7 @@
 
 **Features:**
 
-- Changing Console Lines Color
+- Changing Console Colors
 - Console Interaction *(window size, color changing)*
 - Simplefied Math Functions
 - Oriented Namespaces
@@ -21,23 +21,7 @@ to use it you need to include `consoleutilities.h` in your project explorer then
 #include "consoleulties.h"
 ```
 
-**to use Consoleutilities**
-
-first you need to know that `as` is the standart namespace you can accses all functions by using `as` and its other namespaces
-
-**All namespaces**
-
-`as::consoleinteraction` contains the `ConsoleWindow` class that contains window size functions , `Wait()` and `Clear()`
-
-`as::math` contains some Math Functions like `RootSquare()`
-
-`as::message`  contains the `Print()` function
-
-`as::consoletext` contains the `ChangeColorText()` functions
-
-`as::simplefied` contains simplefied functions
-
-**example:**
+**example code:**
 ```cpp
 int main() {
   as::consoletext::ChangeColorText(Color::CYAN);
