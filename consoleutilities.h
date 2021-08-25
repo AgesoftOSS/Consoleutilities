@@ -53,11 +53,16 @@ namespace as {
 	namespace consoleinteraction {
 
 		struct ConsoleWindow {
+                      #ifdef _WIN32
 			static void HideConsole() const { ShowWindow(GetConsoleWindow(), SW_HIDE); };
 			static void ShowConsole() const { ShowWindow(GetConsoleWindow(), SW_SHOW); };
 			static void MinimizeConsole() const { ShowWindow(GetConsoleWindow(), SW_MINIMIZE); };
 			static void MaximizeConsole() const { ShowWindow(GetConsoleWindow(), SW_MAXIMIZE); };
 			static void RestoreNormalConsoleSize() const { ShowWindow(GetConsoleWindow(), SW_NORMAL); };
+                      #endif
+                     #ifdef __linux__
+                        // nothing
+                     #endif
 		};
 
 		//puts the console to wait for any button pressed
