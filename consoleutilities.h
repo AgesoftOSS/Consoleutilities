@@ -7,21 +7,23 @@
 |	                                                              |
 *--------------------------------------------------------------------*/
 
-// Consoleutilities Version 0.1.2 STABLE BUILD
+// Consoleutilities Version 1.2.2 BETA
 
-const double VERSION = 1.2;
-const int BUILD_NUMBER = 8;
+const double VERSION = 1.22;
+const int BUILD_NUMBER = 9;
 
 #pragma once
 #include <iostream>
-#include <math.h>
-#include <Windows.h>
 #include <string>
-#include <math.h>
-#include <stdio.h>
-#include <ctime>
-#include <cstdlib>
 #include <stdlib.h>
+#include <Windows.h>
+#include <winuser.h>
+#include <ctime>
+#include <fstream>
+#include <cstdlib>
+#include <math.h>
+#include <WinInet.h>
+#pragma comment(lib,"WinInet.lib")
 
 using namespace std;
 
@@ -53,16 +55,11 @@ namespace as {
 	namespace consoleinteraction {
 
 		struct ConsoleWindow {
-                      #ifdef _WIN32
 			static void HideConsole() const { ShowWindow(GetConsoleWindow(), SW_HIDE); };
 			static void ShowConsole() const { ShowWindow(GetConsoleWindow(), SW_SHOW); };
 			static void MinimizeConsole() const { ShowWindow(GetConsoleWindow(), SW_MINIMIZE); };
 			static void MaximizeConsole() const { ShowWindow(GetConsoleWindow(), SW_MAXIMIZE); };
 			static void RestoreNormalConsoleSize() const { ShowWindow(GetConsoleWindow(), SW_NORMAL); };
-                      #endif
-                     #ifdef __linux__
-                        // nothing
-                     #endif
 		};
 
 		//puts the console to wait for any button pressed
@@ -95,6 +92,26 @@ namespace as {
 	namespace consoletext {
 		// Changes The Console Color, insert a color by using the Color Enum.
 		void ChangeColorText(Color colorID) {SetConsoleTextAttribute(h, colorID); }
+	}
+	
+	// functions that interacts with a system (windows , internet etc...)
+	namespace system {
+		// contains functions for network related coding
+		struct Networking {
+			// Checks for Internet Connection
+			static bool CheckForInternet(bool iCheck)
+			{
+				wchar_t url[128];
+				iCheck = InternetCheckConnection(L"https://www.google.com", FLAG_ICC_FORCE_CONNECTION, 0);
+
+				if (iCheck) {
+					return true;
+				}
+				else {
+					return false;
+				}
+			}
+		};
 	}
 
 	// all functions that simplefy your c++ development is in this namespace
