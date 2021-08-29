@@ -95,7 +95,7 @@ namespace as {
 	}
 	
 	// functions that interacts with a system (windows , internet etc...)
-	namespace system {
+	namespace sys {
 		// contains functions for network related coding
 		struct Networking {
 			// Checks for Internet Connection
