@@ -48,24 +48,24 @@ namespace as {
 
 	
 	struct Application {
-		static void Exit() const { exit(0); }
+		static void Exit() { exit(0); }
 	};
 
 	// all functions that interacts with the console is in this namespace
 	namespace consoleinteraction {
 
 		struct ConsoleWindow {
-			static void HideConsole() const { ShowWindow(GetConsoleWindow(), SW_HIDE); };
-			static void ShowConsole() const { ShowWindow(GetConsoleWindow(), SW_SHOW); };
-			static void MinimizeConsole() const { ShowWindow(GetConsoleWindow(), SW_MINIMIZE); };
-			static void MaximizeConsole() const { ShowWindow(GetConsoleWindow(), SW_MAXIMIZE); };
-			static void RestoreNormalConsoleSize() const { ShowWindow(GetConsoleWindow(), SW_NORMAL); };
+			static void HideConsole() { ShowWindow(GetConsoleWindow(), SW_HIDE); };
+			static void ShowConsole() { ShowWindow(GetConsoleWindow(), SW_SHOW); };
+			static void MinimizeConsole() { ShowWindow(GetConsoleWindow(), SW_MINIMIZE); };
+			static void MaximizeConsole() { ShowWindow(GetConsoleWindow(), SW_MAXIMIZE); };
+			static void RestoreNormalConsoleSize() { ShowWindow(GetConsoleWindow(), SW_NORMAL); };
 		};
 
 		//puts the console to wait for any button pressed
-		void Wait() const { system("pause"); }
+		void Wait() { system("pause"); }
 		// Clears the console
-		void Clear() const { system("cls"); }
+		void Clear() { system("cls"); }
 	}
 	// The Math Namespace Contains The Math Class
 	namespace math {
@@ -122,7 +122,7 @@ namespace as {
 	}
 
 	// prints consoleutilities infos
-	void consoleultiesversion const ()
+	void consoleultiesversion()
 	{
 		as::consoletext::ChangeColorText(Color::BRIGHTYELLOW);
 		cout << "[Consoleutilities] By Agesoft" << endl;
