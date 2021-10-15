@@ -94,6 +94,25 @@ namespace as {
 		void ChangeColorText(Color colorID) {SetConsoleTextAttribute(h, colorID); }
 	}
 	
+	namespace alogrithm {
+		// Coverts a binary string into a integer
+		int toBinary(string bin, int length)
+		{
+			int val = 1;
+			int r = 0;
+			for (int i = length; i >= 0; i--)
+			{
+				char c = bin.at(i);
+				if (c == '1')
+				{
+					r = r + val;
+				}
+				val = val * 2;
+			}
+			return r;
+		}
+	}
+	
 	// functions that interacts with a system (windows , internet etc...)
 	namespace sys {
 		// contains functions for network related coding
