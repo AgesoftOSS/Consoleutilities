@@ -94,8 +94,8 @@ namespace as {
 		void ChangeColorText(Color colorID) {SetConsoleTextAttribute(h, colorID); }
 	}
 	
-	// Contains alogrithms.
-	namespace alogrithm {
+	// Contains algorithms.
+	namespace algorithm {
 
 		// Reverses a string
 		string Reverse(string& str) {
@@ -109,8 +109,9 @@ namespace as {
 		}
 
 		// Converts binary into decimal
-		int toBinary(string bin, int length)
+		int binary(string bin)
 		{
+			int length = bin.length() - 1;
 			int val = 1;
 			int r = 0;
 			for (int i = length; i >= 0; i--)
@@ -123,6 +124,16 @@ namespace as {
 				val = val * 2;
 			}
 			return r;
+		}
+
+		// Converts hex into decimal
+		int hex(string& str)
+		{
+			int r;
+			r = stoi(str, 0, 16);
+			if (str[0] == '0' && str[1] == 'x') {
+				return r;
+			}
 		}
 	}
 	
