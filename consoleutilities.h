@@ -94,8 +94,21 @@ namespace as {
 		void ChangeColorText(Color colorID) {SetConsoleTextAttribute(h, colorID); }
 	}
 	
+	// Contains alogrithms.
 	namespace alogrithm {
-		// Coverts a binary string into a integer
+
+		// Reverses a string
+		string Reverse(string& str) {
+			int n = str.length();
+			for (int i = 0; i < n / 2; i++)
+			{
+				swap(str[i], str[n - i - 1]);
+			}
+
+			return str;
+		}
+
+		// Converts binary into decimal
 		int toBinary(string bin, int length)
 		{
 			int val = 1;
