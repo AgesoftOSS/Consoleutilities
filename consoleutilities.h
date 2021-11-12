@@ -10,7 +10,7 @@
 // Consoleutilities Version 1.2.2 BETA
 
 const double VERSION = 1.22;
-const int BUILD_NUMBER = 9;
+const int BUILD_NUMBER = 10;
 
 #pragma once
 #include <iostream>
@@ -92,6 +92,21 @@ namespace as {
 	namespace consoletext {
 		// Changes The Console Color, insert a color by using the Color Enum.
 		void ChangeColorText(Color colorID) {SetConsoleTextAttribute(h, colorID); }
+		
+		//Outputs a colored text line
+		void PrintColoredText(string str, Color color, bool newLine)
+		{
+			if (newLine) {
+				SetConsoleTextAttribute(h, color);
+				cout << str << endl;
+				SetConsoleTextAttribute(h, WHITE);
+			}
+			else {
+				SetConsoleTextAttribute(h, color);
+				cout << str;
+				SetConsoleTextAttribute(h, WHITE);
+			}
+		}
 	}
 	
 	// Contains algorithms.
