@@ -94,18 +94,11 @@ namespace as {
 		void ChangeColorText(Color colorID) {SetConsoleTextAttribute(h, colorID); }
 		
 		//Outputs a colored text line
-		void PrintColoredText(string str, Color color, bool newLine)
+		void PrintColoredText(string str, Color color)
 		{
-			if (newLine) {
-				SetConsoleTextAttribute(h, color);
-				cout << str << endl;
-				SetConsoleTextAttribute(h, WHITE);
-			}
-			else {
 				SetConsoleTextAttribute(h, color);
 				cout << str;
 				SetConsoleTextAttribute(h, WHITE);
-			}
 		}
 	}
 	
