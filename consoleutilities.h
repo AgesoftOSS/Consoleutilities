@@ -10,7 +10,7 @@
 // Consoleutilities Version 1.2.2 BETA
 
 const double VERSION = 1.22;
-const int BUILD_NUMBER = 10;
+const int BUILD_NUMBER = 11;
 
 #pragma once
 #include <iostream>
@@ -46,10 +46,6 @@ enum Color {
 // the consoleutilities namespace
 namespace as {
 
-	
-	struct Application {
-		static void Exit() { exit(0); }
-	};
 
 	// all functions that interacts with the console is in this namespace
 	namespace consoleinteraction {
@@ -61,11 +57,6 @@ namespace as {
 			static void MaximizeConsole() { ShowWindow(GetConsoleWindow(), SW_MAXIMIZE); };
 			static void RestoreNormalConsoleSize() { ShowWindow(GetConsoleWindow(), SW_NORMAL); };
 		};
-
-		//puts the console to wait for any button pressed
-		void Wait() { system("pause"); }
-		// Clears the console
-		void Clear() { system("cls"); }
 	}
 	// The Math Namespace Contains The Math Class
 	namespace math {
@@ -75,19 +66,10 @@ namespace as {
 
 		//Gets the decimal number of the procent value
 		double GetProcentNumber(double value) { return value / 100; }
-		double ExpotentMath(double basis, double potenz) { return pow(basis, potenz); }
-		double Rootsquare(double value) { return sqrt(value); }
 		double GetCircleArea(double r) { return PI * pow(r, 2); }
 		double GetCircleScope(double r) { return 2 * PI * r; }
 	}
-
-	// The Message Namespace Contains Message Functions
-	namespace message {
-		
-			template<typename T>
-			void Print(T text) { cout << text << endl; }
-	}
-
+	
 	// all functions that changes the text in any form is in this namespace
 	namespace consoletext {
 		// Changes The Console Color, insert a color by using the Color Enum.
