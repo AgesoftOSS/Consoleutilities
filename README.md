@@ -24,10 +24,9 @@ to use it you need to include `consoleutilities.h` in your project explorer then
 **example code:**
 ```cpp
 int main() {
-  as::consoletext::ChangeColorText(Color::CYAN);
-  as::message::Print("Hello World");
-  as::consoleinteraction::Wait()
-  as::Application::Exit();
+  as::cu::ChangeColorText(Color::CYAN);
+  std::cout << "Hello World" << std::endl;
+  as::cu::ChangeColorText(Color::WHITE);
 }
 ```
 
