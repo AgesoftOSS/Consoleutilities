@@ -48,10 +48,6 @@ namespace as {
 	namespace cu {
 		
 		using namespace std;
-		
-		struct Application {
-			static void Exit() { exit(0); }
-		};
 
 		struct ConsoleWindow {
 			static void HideConsole() { ShowWindow(GetConsoleWindow(), SW_HIDE); };
@@ -62,17 +58,6 @@ namespace as {
 		};
 
 		const double PI = 3.14;
-
-		template<typename T>
-		double random(T max)
-		{
-			for (int i = 0; i < 100; i++)
-			{
-				T out = rand() % max;
-				return out;
-			}
-
-		}
 
 		double GetProcentNumber(double value) { return value / 100; }
 		double GetCircleArea(double r) { return PI * pow(r, 2); }
@@ -90,7 +75,7 @@ namespace as {
 
 
 		// Reverses a string
-		string Reverse(string str) {
+		string Reverse(string& str) {
 			int n = str.length();
 			for (int i = 0; i < n / 2; i++)
 			{
@@ -101,7 +86,7 @@ namespace as {
 		}
 
 		// Converts binary into decimal
-		int binary(string bin)
+		int binary(string& bin)
 		{
 			int length = bin.length() - 1;
 			int val = 1;
@@ -119,7 +104,7 @@ namespace as {
 		}
 
 		// Converts hex into decimal
-		int hex(string str)
+		int hex(string& str)
 		{
 			int r;
 			r = stoi(str, 0, 16);
