@@ -7,10 +7,10 @@
 |	                                                              |
 *--------------------------------------------------------------------*/
 
-// Consoleutilities Version 1.2.2 BETA
+// Consoleutilities Version 1.2.3 BETA
 
-const double VERSION = 1.22;
-const int BUILD_NUMBER = 11;
+const double VERSION = 1.23;
+const int BUILD_NUMBER = 12;
 
 #pragma once
 #include <iostream>
@@ -24,15 +24,14 @@ const int BUILD_NUMBER = 11;
 #include <math.h>
 #include <WinInet.h>
 #pragma comment(lib,"WinInet.lib")
-
-using namespace std;
+#pragma comment(lib, "urlmon.lib")
 
 HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE); // The Handle That Consoleutilities Uses for STD_OUTPUT_HANDLE
 
 #pragma region consoleutilities
 
 // SetConsoleTextAttribute() Colors.
-enum Color {
+enum class Color {
 	WHITE = 0x07,
 	RED = 0x0004,
 	BLUE = 0x0001,
@@ -43,12 +42,16 @@ enum Color {
 	CYAN = 0x000B,
 };
 
-// the consoleutilities namespace
 namespace as {
 
-
-	// all functions that interacts with the console is in this namespace
-	namespace consoleinteraction {
+	// the Consoleutilities namespace
+	namespace cu {
+		
+		using namespace std;
+		
+		struct Application {
+			static void Exit() { exit(0); }
+		};
 
 		struct ConsoleWindow {
 			static void HideConsole() { ShowWindow(GetConsoleWindow(), SW_HIDE); };
@@ -57,38 +60,37 @@ namespace as {
 			static void MaximizeConsole() { ShowWindow(GetConsoleWindow(), SW_MAXIMIZE); };
 			static void RestoreNormalConsoleSize() { ShowWindow(GetConsoleWindow(), SW_NORMAL); };
 		};
-	}
-	// The Math Namespace Contains The Math Class
-	namespace math {
 
-		// Shorted PI Number
 		const double PI = 3.14;
 
-		//Gets the decimal number of the procent value
+		template<typename T>
+		double random(T max)
+		{
+			for (int i = 0; i < 100; i++)
+			{
+				T out = rand() % max;
+				return out;
+			}
+
+		}
+
 		double GetProcentNumber(double value) { return value / 100; }
 		double GetCircleArea(double r) { return PI * pow(r, 2); }
 		double GetCircleScope(double r) { return 2 * PI * r; }
-	}
-	
-	// all functions that changes the text in any form is in this namespace
-	namespace consoletext {
+
 		// Changes The Console Color, insert a color by using the Color Enum.
-		void ChangeColorText(Color colorID) {SetConsoleTextAttribute(h, colorID); }
-		
-		//Outputs a colored text line
+		void ChangeColorText(Color color) { SetConsoleTextAttribute(h, (WORD)color); }
+
 		void PrintColoredText(string str, Color color)
 		{
-				SetConsoleTextAttribute(h, color);
-				cout << str;
-				SetConsoleTextAttribute(h, WHITE);
+			SetConsoleTextAttribute(h, (WORD)color);
+			cout << str;
+			SetConsoleTextAttribute(h, (WORD)Color::WHITE);
 		}
-	}
-	
-	// Contains algorithms.
-	namespace algorithm {
+
 
 		// Reverses a string
-		string Reverse(string& str) {
+		string Reverse(string str) {
 			int n = str.length();
 			for (int i = 0; i < n / 2; i++)
 			{
@@ -117,19 +119,18 @@ namespace as {
 		}
 
 		// Converts hex into decimal
-		int hex(string& str)
+		int hex(string str)
 		{
 			int r;
 			r = stoi(str, 0, 16);
 			if (str[0] == '0' && str[1] == 'x') {
 				return r;
 			}
+			else {
+				cout << "Not a valid hexdecimal number" << endl;
+			}
 		}
-	}
-	
-	// functions that interacts with a system (windows , internet etc...)
-	namespace sys {
-		// contains functions for network related coding
+
 		struct Networking {
 			// Checks for Internet Connection
 			static bool CheckForInternet(bool iCheck)
@@ -145,28 +146,23 @@ namespace as {
 				}
 			}
 		};
-	}
 
-	// all functions that simplefy your c++ development is in this namespace
-	namespace simplefied {
 		void PrintBuildInfo(const string aCompanyName, const int YEARSTART, const int YEAREND, const string aName, const int MAJOR_VERSION, const int MINIOR_VERION, const int BUILD_NUMBER) {
 			cout << aName << " " << MAJOR_VERSION << "." << MINIOR_VERION << " [Build:" << BUILD_NUMBER << "]\n" << aCompanyName << " " << YEARSTART << "-" << YEAREND << " " << "All Rights Reserved" << endl;
 		}
-	}
 
-	// prints consoleutilities infos
-	void consoleultiesversion()
-	{
-		as::consoletext::ChangeColorText(Color::BRIGHTYELLOW);
-		cout << "[Consoleutilities] By Agesoft" << endl;
-		as::consoletext::ChangeColorText(Color::BLUE);
-		cout << "Version: BETA " << VERSION << endl;
-		cout << "Build Number: " << BUILD_NUMBER << endl;
-		as::consoletext::ChangeColorText(Color::CYAN);
-		cout << "\nCopyright Agesoft" << endl;
-		as::consoletext::ChangeColorText(Color::WHITE);
+		// prints consoleutilities infos
+		void consoleultiesversion()
+		{
+			as::cu::ChangeColorText(Color::BRIGHTYELLOW);
+			cout << "[Consoleutilities] By Agesoft" << endl;
+			as::cu::ChangeColorText(Color::BLUE);
+			cout << "Version: BETA " << VERSION << endl;
+			cout << "Build Number: " << BUILD_NUMBER << endl;
+			as::cu::ChangeColorText(Color::CYAN);
+			cout << "\nCopyright Agesoft" << endl;
+			as::cu::ChangeColorText(Color::WHITE);
+		}
 	}
-
 }
-
 #pragma endregion
