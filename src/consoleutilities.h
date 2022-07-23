@@ -26,8 +26,6 @@ const int BUILD_NUMBER = 12;
 #pragma comment(lib,"WinInet.lib")
 #pragma comment(lib, "urlmon.lib")
 
-HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
-
 #pragma region consoleutilities
 
 // SetConsoleTextAttribute() Colors.

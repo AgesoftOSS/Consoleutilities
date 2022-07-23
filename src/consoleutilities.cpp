@@ -46,11 +46,13 @@ double as::cu::getCircleScope(double r)
 
 void as::cu::changeColorText(Color color)
 {
+	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
 	SetConsoleTextAttribute(h, (WORD)color);
 }
 
 void as::cu::printc(std::string str, Color color)
 {
+	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
 	SetConsoleTextAttribute(h, (WORD)color);
 	std::cout << str << std::endl;
 	SetConsoleTextAttribute(h, (WORD)Color::WHITE);
@@ -61,5 +63,10 @@ bool as::cu::Networking::checkForInternet(bool iCheck)
 	wchar_t url[128];
 	iCheck = InternetCheckConnection(L"https://www.google.com", FLAG_ICC_FORCE_CONNECTION, 0);
 
-	iCheck ? true : false;
+	if (iCheck) {
+		return true;
+	}
+	else {
+		return false;
+	}
 }
