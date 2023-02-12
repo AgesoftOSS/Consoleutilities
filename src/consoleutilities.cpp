@@ -60,13 +60,10 @@ void as::cu::printc(std::string str, Color color)
 
 bool as::cu::Networking::checkForInternet(bool iCheck)
 {
-	wchar_t url[128];
 	iCheck = InternetCheckConnection(L"https://www.google.com", FLAG_ICC_FORCE_CONNECTION, 0);
 
-	if (iCheck) {
+	if (iCheck)
 		return true;
-	}
-	else {
+	else
 		return false;
-	}
 }

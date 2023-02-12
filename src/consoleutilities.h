@@ -7,10 +7,10 @@
 |	                                                                  |
 *--------------------------------------------------------------------*/
 
-// Consoleutilities Version 1.3.0 BETA
+// Consoleutilities Version 1.3.1 BETA
 
 const double VERSION = 1.3;
-const int BUILD_NUMBER = 12;
+const int BUILD_NUMBER = 13;
 
 #pragma once
 #include <iostream>
