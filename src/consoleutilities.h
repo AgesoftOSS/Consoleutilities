@@ -1,32 +1,40 @@
-/*--------------------------------------------------------------------*
-|                                                                     |
-|																      |
-|         (c) Agesoft 2020-2021 All rights reserved					  |
-|	consoleutilities.h -- A Library For Easier C++ Developent         |
-|	                                                                  |
-|	                                                                  |
-*--------------------------------------------------------------------*/
+/*---------------------------------------------------------------------*
+|                                                                    	|
+|									|
+|         (c) Agesoft 2020-2023 All rights reserved			|
+|	consoleutilities.h -- A Library For Easier C++ Developent       |
+|	                                                              	|
+|	                                                              	|
+*---------------------------------------------------------------------*/
 
-// Consoleutilities Version 1.3.1 BETA
-
-const double VERSION = 1.3;
-const int BUILD_NUMBER = 13;
+// Consoleutilities Version 1.4.0
 
 #pragma once
-#include <iostream>
-#include <string>
-#include <stdlib.h>
-#include <Windows.h>
+#include <iostream> // Basic I/O C++
+#include <string> // C++ String 
+#include <stdlib.h> // Standart C Library
+#include <Windows.h> // Windows API
 #include <winuser.h>
-#include <ctime>
+#include <ctime> // C++ Time
 #include <fstream>
-#include <cstdlib>
 #include <math.h>
 #include <WinInet.h>
 #pragma comment(lib,"WinInet.lib")
 #pragma comment(lib, "urlmon.lib")
 
 #pragma region consoleutilities
+
+// Version variables
+class Consoleutilities {
+public:
+	Consoleutilities();
+	~Consoleutilities();
+public:
+	double Version = 1.4;
+	int Build = 14;
+	std::string Maintainer = "Agesoft";
+private:
+}
 
 // SetConsoleTextAttribute() Colors.
 enum class Color {
@@ -58,7 +66,7 @@ namespace as {
 		template<typename T>
 		T random(T max) {
 
-			for (int i = 0; i < 100; i++)
+			for (int i = 0; i < 10000; i++)
 			{
 				T out = rand() % max;
 				return out;
@@ -71,11 +79,10 @@ namespace as {
 
 		// Changes The Console Color, insert a color by using the Color Enum.
 		void changeColorText(Color color);
-
 		void printc(std::string str, Color color);
 
 		struct Networking {
-			// Checks for Internet Connection
+			// [DEPRECATED] Checks for Internet Connection
 			static bool checkForInternet(bool iCheck);
 		};
 	}
