@@ -58,12 +58,9 @@ void as::cu::printc(std::string str, Color color)
 	SetConsoleTextAttribute(h, (WORD)Color::WHITE);
 }
 
+[[deprecated("has been Deprecated because InternetCheckConnection() has been deprecated as well")]]
 bool as::cu::Networking::checkForInternet(bool iCheck)
 {
-	iCheck = InternetCheckConnection(L"https://www.google.com", FLAG_ICC_FORCE_CONNECTION, 0);
-
-	if (iCheck)
-		return true;
-	else
-		return false;
+	std::cout << "[Deprecated Function]" << std::endl;
+	return false;
 }

@@ -1,8 +1,6 @@
 # Consoleutilities
 ![e](https://cdn.discordapp.com/attachments/773986304433979437/861187630459912242/unknown.png)
 
-[![Generic badge](https://img.shields.io/badge/Version-1.3_BETA-309fff.svg)](https://shields.io/)
-
 **Consoleutilities** is a **C++** Library for Windows which makes your c++ development alot easier and faster 
 
 **Features:**

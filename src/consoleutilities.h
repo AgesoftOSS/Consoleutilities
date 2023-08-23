@@ -1,26 +1,23 @@
 /*---------------------------------------------------------------------*
-|                                                                    	|
-|									|
-|         (c) Agesoft 2020-2023 All rights reserved			|
-|	consoleutilities.h -- A Library For Easier C++ Developent       |
-|	                                                              	|
-|	                                                              	|
+|                                                                      |
+|																	   |
+|         (c) Agesoft 2020-2023 All rights reserved			           |
+|	consoleutilities.h -- A Library For Easier C++ Developent          |
+|	                                                              	   |
+|	                                                              	   |
 *---------------------------------------------------------------------*/
 
-// Consoleutilities Version 1.4.0
+// Consoleutilities Version 1.4.1
 
 #pragma once
-#include <iostream> // Basic I/O C++
-#include <string> // C++ String 
-#include <stdlib.h> // Standart C Library
-#include <Windows.h> // Windows API
+#include <iostream>
+#include <string>
+#include <stdlib.h>
+#include <Windows.h>
 #include <winuser.h>
-#include <ctime> // C++ Time
+#include <ctime>
 #include <fstream>
 #include <math.h>
-#include <WinInet.h>
-#pragma comment(lib,"WinInet.lib")
-#pragma comment(lib, "urlmon.lib")
 
 #pragma region consoleutilities
 
@@ -31,7 +28,7 @@ public:
 	~Consoleutilities();
 public:
 	double Version = 1.4;
-	int Build = 14;
+	int Build = 15;
 	std::string Maintainer = "Agesoft";
 private:
 }
@@ -83,6 +80,7 @@ namespace as {
 
 		struct Networking {
 			// [DEPRECATED] Checks for Internet Connection
+			[[deprecated("has been Deprecated because InternetCheckConnection() has been deprecated as well")]]
 			static bool checkForInternet(bool iCheck);
 		};
 	}
